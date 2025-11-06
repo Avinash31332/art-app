@@ -48,8 +48,12 @@ app.use(cors());
 app.use(express.json());
 
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
-
+const io = new Server(server, {
+  cors: {
+    origin: "https://art-app-frontend.onrender.com", // Your exact frontend URL
+    methods: ["GET", "POST"],
+  },
+});
 const genId = () =>
   `${Date.now().toString(36)}-${Math.floor(Math.random() * 1e6).toString(36)}`;
 const cursors = {};
