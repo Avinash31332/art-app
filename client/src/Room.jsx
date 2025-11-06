@@ -8,7 +8,7 @@ import Canvas from "./Canvas";
 // from drawingUtils, as the eraser overlay is handled by the white mask.
 import { drawStroke } from "./drawingUtils";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://art-app-server.onrender.com");
 
 // --- Helpers ---
 const randomColor = () => `hsl(${Math.random() * 360}, 80%, 60%)`;
